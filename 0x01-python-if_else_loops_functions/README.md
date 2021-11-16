@@ -14,7 +14,7 @@
 * 11-pow.py	- function that computes a to the power of b and return the value
 * 12-fizzbuzz.py	- function that prints the numbers from 1 to 100, but replaces multiples of 3, 5 and 3 and 5 by Fizz, Buzz and Fizzbuzz
 * 13-insert_number.c	C function that inserts a number into a sorted singly linked list
-* lists.h	header file for the C program above
+* lists.h	header file for the C program
 * 100-print_tebahpla.py	- script that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase
 * 101-remove_char_at.py	- script that creates a copy of the string, removing the character at the position n
 * 102-magic_calculation.py	- function created from a bytecode
