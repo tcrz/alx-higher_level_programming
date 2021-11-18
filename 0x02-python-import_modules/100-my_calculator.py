@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-from calculator_1 import add, sub, mul, div
-
 if __name__ == "__main__":
     import sys
+    from calculator_1 import add, sub, mul, div
+
     def calc(func, a, b, sign):
         c = func(a, b)
         print("{:d} {:s} {:d} = {:d}".format(a, sign, b, c))
