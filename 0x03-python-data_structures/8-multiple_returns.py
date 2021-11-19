@@ -7,9 +7,4 @@ def multiple_returns(sentence):
         tuple = length, sentence[0]
     else:
         tuple = length, "None"
-
     return tuple
-
-sentence = "dsdssd"
-length, first = multiple_returns(sentence)
-print("Length: {:d} - First character: {}".format(length, first))
