@@ -2,9 +2,6 @@
 
 void print_python_list_info(PyObject *p)
 {
-
-	if (PyList_Check(p))
-	{
 		int size, i;
 		PyListObject *listobj = (PyListObject *)p;
 		PyObject *obj;
@@ -20,7 +17,7 @@ void print_python_list_info(PyObject *p)
 			printf("Element %d: %s\n", i, Py_TYPE(obj)->tp_name);
 			i++;
 		}
-	}
+
 }
 
 
