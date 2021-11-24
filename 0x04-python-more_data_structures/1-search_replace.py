@@ -7,7 +7,4 @@ def search_replace(my_list, search, replace):
         else:
             i = replace
             new_list.append(i)
-    # idx = new_list.index(search)
-    # new_list.pop(idx)
-    # new_list.insert(idx, replace)
     return new_list
