@@ -4,8 +4,8 @@ def safe_print_division(a, b):
     try:
         print("Inside result: ", end="")
         x = a / b
-        print(x)
     except (TypeError, ValueError, ZeroDivisionError):
-        print(x)
+        return (x)
     finally:
-        return x
+        print(x)
+    return (x)
