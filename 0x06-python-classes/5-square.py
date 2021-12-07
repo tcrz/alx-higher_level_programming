@@ -7,6 +7,7 @@ class Square:
     def __init__(self, size=0):
         self.__size = size
 
+    """method that returns area of a square"""
     def area(self):
         return (self.__size ** 2)
 
@@ -25,8 +26,12 @@ class Square:
         else:
             self.__size = value
 
+    """method to print a square"""
     def my_print(self):
-        for i in range(self.__size):
-            for x in range(self.__size):
-                print("#", end="")
-            print("")
+        if self.__size:
+            pass
+        elif:
+            for i in range(self.__size):
+                for x in range(self.__size):
+                    print("#", end="")
+                print("")
