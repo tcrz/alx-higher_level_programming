@@ -7,7 +7,7 @@ Define a Square class
 class Square:
     """A class that defines a Square with a private attribute called size"""
     def __init__(self, size=0):
-        self.__size = size
+        self.size(self.__size)
 
     """A public instance method that returens the current square area"""
     def area(self):
