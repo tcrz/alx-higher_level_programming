@@ -9,7 +9,7 @@ class Square:
     def __init__(self, size=0):
         self.__size = size
 
-    """A public instance method that returens the current square area"""
+    """A public instance method that returns the current square area"""
     def area(self):
         return (self.__size ** 2)
 
