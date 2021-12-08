@@ -8,23 +8,23 @@ class Square:
         self.size = size
         self.position = position
 
-    """method that returns area of a square"""
     def area(self):
+        """method that returns area of a square"""
         return (self.__size ** 2)
 
-    """property to retrieve attribute, size"""
     @property
     def size(self):
+        """property to retrieve attribute, size"""
         return self.__size
 
-    """property to retrieve position attribute"""
     @property
     def position(self):
+        """property to retrieve position attribute"""
         return self.__position
 
-    """property to set value for size attribute"""
     @size.setter
     def size(self, value):
+        """property to set value for size attribute"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -32,15 +32,15 @@ class Square:
         else:
             self.__size = value
 
-    """property to set value for position attribute"""
     @position.setter
     def position(self, value):
+        """property to set value for position attribute"""
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-    """method to print a square with position"""
     def my_print(self):
+        """method to print a square with position"""
         if self.__size == 0:
             print()
             return
