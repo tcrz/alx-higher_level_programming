@@ -37,7 +37,8 @@ class Square:
         """property to set value for position attribute"""
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        else:
+            self.__position = value
 
     def my_print(self):
         """method to print a square with position"""
