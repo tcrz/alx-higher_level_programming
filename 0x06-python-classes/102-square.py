@@ -28,24 +28,24 @@ class Square:
 
     def __eq__(self, self2):
         """checks if equals"""
-        return self.__size == self2.__size
+        return self.size == self2.size
 
     def __ne__(self, self2):
         """checks if not equal"""
-        return self.__size != self2.__size
+        return self.size != self2.size
 
     def __le__(self, self2):
         """checks if less than or equal"""
-        return self.__size <= self2.__size
+        return self.size <= self2.size
 
     def __ge__(self, self2):
         """checks if greater than or equal"""
-        return self.__size >= self2.__size
+        return self.size >= self2.size
 
     def __lt__(self, self2):
         """checks if less than"""
-        return self.__size < self2.__size
+        return self.size < self2.size
 
     def __gt__(self, self2):
         """checksk if greater than"""
-        return self.__size > self2.__size
+        return self.size > self2.size
