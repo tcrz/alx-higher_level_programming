@@ -42,13 +42,13 @@ class Square:
     """method to print a square with position"""
     def my_print(self):
         if self.__size == 0:
-            print("")
-        else:
-            for i in range(self.__position[1]):
-                print("")
-            for j in range(self.__size):
-                for y in range(self.__position[0]):
-                    print(" ", end="")
-                for x in range(self.__size):
-                    print("#", end="")
-                print("")
+            print()
+            return
+        for y in range(0, self.__position[1]):
+            print()
+        for i in range(0, self.__size):
+            for x in range(0, self.__position[0]):
+                print(" ", end="")
+            for j in range(0, self.__size):
+                print("#", end="")
+            print()
