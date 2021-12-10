@@ -1,0 +1,37 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+  First import ``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+    >>> add_integer(2.4, 4.3)
+    6
+    >>> add_integer(12, -9)
+    3
+    >>> add_integer("String", 3)
+    Traceback (most recent call last):
+      ...
+    TypeError: a must be an integer
+    >>> [add_integer(n) for n in range(5)]
+    [98, 99, 100, 101, 102]
+    >>> add_integer(None)
+    Traceback (most recent call last):
+      ...
+    TypeError: a must be an integer
+    >>> add_integer(234)
+    332
+    >>> add_integer(23, 3)
+    26
+    >>> add_integer(104.4, -7.6)
+    97
+    >>> add_integer(None)
+    Traceback (most recent call last):
+       ...
+    TypeError: a must be an integer
+
