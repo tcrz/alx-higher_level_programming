@@ -6,7 +6,14 @@ This is the 0-add_integer module
 
 def add_integer(a, b=98):
     """
-    Returns the sum of two int/float arguments
+    returns the sum of two integers
+
+    Args:
+        a (int): integer value
+        b (int, optional): integer value. Defaults to 98.
+
+    Returns:
+        int: Sum of a and b
     """
 
     if type(a) is not int and type(a) is not float:
