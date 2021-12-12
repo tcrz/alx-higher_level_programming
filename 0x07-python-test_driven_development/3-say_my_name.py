@@ -18,8 +18,3 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("last_name must be a string")
     if type(first_name) is str and type(last_name) is str:
         print("My name is {} {}".format(first_name, last_name))
-
-
-if __name__ == "__main__":
-    import doctestgit sta
-    doctest.testmod()

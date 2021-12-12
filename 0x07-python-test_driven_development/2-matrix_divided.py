@@ -35,8 +35,3 @@ def matrix_divided(matrix, div):
         new_list = [round(n/div, 2) for n in each]
         new_matrix.append(new_list)
     return new_matrix
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()

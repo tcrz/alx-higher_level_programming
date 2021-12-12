@@ -18,8 +18,3 @@ def print_square(size):
         for x in range(size):
             print("#", end="")
         print()
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
