@@ -1,0 +1,53 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+  First import ``text_indentation`` from the ``5-text_indentation`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+    >>> text_indentation("Friday? Nope, Monday. Okay, the code is: 23432")
+    Friday?
+    <BLANKLINE>
+    Nope, Monday.
+    <BLANKLINE>
+    Okay, the code is:
+    <BLANKLINE>
+    23432
+    >>> text_indentation("...i have nussin to say.")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    i have nussin to say.
+    <BLANKLINE>
+    >>> text_indentation("From Ghana and  his name is: Antonioooo")
+    From Ghana and  his name is:
+    <BLANKLINE>
+    Antonioooo
+    >>> text_indentation("Have you eaten? No? Oh take in something for me.")
+    Have you eaten?
+    <BLANKLINE>
+    No?
+    <BLANKLINE>
+    Oh take in something for me.
+    <BLANKLINE>
+    >>> text_indentation(419)
+    Traceback (most recent call last):
+       ...
+    TypeError: text must be a string
+    >>> text_indentation("sdnksd")
+    sdnksd
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+       ...
+    TypeError: text must be a string
+    >>> text_indentation(4.5)
+    Traceback (most recent call last):
+       ...
+    TypeError: text must be a string
