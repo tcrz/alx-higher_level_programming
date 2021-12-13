@@ -55,7 +55,7 @@ class Rectangle:
         return rep
 
     def __str__(self):
-        """returns an “informal” and nicely printable string representation of an instance"""
+        """returns “informal” printable string representation of an instance"""
         rec = ""
         if self.__width == 0 or self.__height == 0:
             return rec
