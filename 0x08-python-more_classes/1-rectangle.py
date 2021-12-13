@@ -6,9 +6,14 @@ Rectangle class
 
 class Rectangle:
     """defines a Rect class"""
-    def __init__(self, height, width):
+    def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
+
+    @property
+    def height(self):
+        """height getter"""
+        return self.__height
 
     @property
     def width(self):
@@ -16,24 +21,27 @@ class Rectangle:
         return self.__width
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """width setter"""
-        if type(width) is not int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
-        if width < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = width
-
-    @property
-    def height(self):
-        """height getter"""
-        return self.__height
+        self.__width = value
 
     @height.setter
-    def height(self, height):
+    def height(self, value):
         """height setter"""
-        if type(height) is not int:
-            raise TypeError("width must be an integer")
-        if height < 0:
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = height
+        self.__height = value
+
+
+my_rectangle = Rectangle(2, 4)
+print(my_rectangle.__dict__)
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print(my_rectangle.__dict__)
