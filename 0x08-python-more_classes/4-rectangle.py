@@ -49,8 +49,8 @@ class Rectangle:
         return (self.__height * 2) + (self.__width * 2)
 
     def __repr__(self):
-        values = str(self.__width) + ', ' + str(self.__height)
-        rep = rep = 'Rectangle (' + values + ')'
+        values = '(' + str(self.__width) + ', ' + str(self.__height)
+        rep = rep = 'Rectangle' + values + ')'
         return rep
 
     def __str__(self):
