@@ -49,11 +49,13 @@ class Rectangle:
         return (self.__height * 2) + (self.__width * 2)
 
     def __repr__(self):
+        """returns an “official” string representation of an instance"""
         values = '(' + str(self.__width) + ', ' + str(self.__height)
         rep = rep = 'Rectangle' + values + ')'
         return rep
 
     def __str__(self):
+        """returns an “informal” and nicely printable string representation of an instance"""
         rec = ""
         if self.__width == 0 or self.__height == 0:
             return rec
