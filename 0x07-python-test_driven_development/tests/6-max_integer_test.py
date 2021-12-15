@@ -10,8 +10,8 @@ class TestMaxInteger(unittest.TestCase):
         """tests with max_integer func. should return max integer"""
         self.assertEqual(max_integer([50, 30, 54]), 54)
         self.assertEqual(max_integer([50.32, -30, -54]), 50.32)
-        self.assertEqual(max_integer([-50, -30, -54]), -30)
-        self.assertEqual(max_integer([-130, 4.4]), 4.4)
+        self.assertEqual(max_integer([]), None)
+        self.assertEqual(max_integer([130]), 130)
 
     def test_errors(self):
         """tests with max_integer func. should raise TypeError exception"""
