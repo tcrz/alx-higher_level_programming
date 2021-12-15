@@ -19,7 +19,7 @@ class TestMaxInteger(unittest.TestCase):
 #        self.assertRaises(TypeError, max_integer, "Test")
       #  self.assertRaises(TypeError, max_integer, ["ds", "sd"])
       #  self.assertRaises(TypeError, max_integer, ["ds", []])
-         self.assertRaises(TypeError, max_integer, None)
+       #  self.assertRaises(TypeError, max_integer, None)
 
 
 if __name__ == "__main__":
