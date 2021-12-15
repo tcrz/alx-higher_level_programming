@@ -9,13 +9,15 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_integer(self):
         """tests with max_integer func. should return max integer"""
         self.assertEqual(max_integer([50, 30, 54]), 54)
-        self.assertEqual(max_integer([50, -30, -54]), 50)
+        self.assertEqual(max_integer([50.32, -30, -54]), 50.32)
         self.assertEqual(max_integer([-50, -30, -54]), -30)
-        self.assertEqual(max_integer([-130, 4]), 4)
+        self.assertEqual(max_integer([-130, 4.4]), 4.4)
 
     def test_errors(self):
         """tests with max_integer func. should raise TypeError exception"""
         self.assertRaises(TypeError, max_integer, 4)
+        self.assertRaises(TypeError, max_integer, 5.5)
+        self.assertRaises(TypeError, max_integer, [2, 3.4, "str"])
 
 
 if __name__ == "__main__":
