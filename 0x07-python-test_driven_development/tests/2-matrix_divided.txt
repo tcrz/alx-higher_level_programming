@@ -64,4 +64,6 @@ Now use it:
     Traceback (most recent call last):
        ...
     TypeError: matrix_divided() missing 1 required positional argument: 'div'
+    >>> matrix_divided([[1,2,4],[2,4,9]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
