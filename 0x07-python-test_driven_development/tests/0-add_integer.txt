@@ -43,7 +43,6 @@ Now use it:
        ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
     >>> add_integer(float('NaN'))
-    >>> add_integer(float('NaN'))
     Traceback (most recent call last):
        ...
     ValueError: cannot convert float NaN to integer
