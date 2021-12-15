@@ -18,31 +18,31 @@ Now use it:
        ...
     TypeError: Each row of the matrix must have the same size
     >>> matrix3 = ["string",[2, 3, 7], [12, 34, 8]]
-    >>> print(matrix_divided(matrix3, 5)) # doctest: +NORMALIZE_WHITESPACE
+    >>> print(matrix_divided(matrix3, 5))
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
-    >>> matrix4 = [[2, "String", 7], [12, 34, 8]] # doctest: +NORMALIZE_WHITESPACE
-    >>> print(matrix_divided(matrix4, 5)) # doctest: +NORMALIZE_WHITESPACE
+    >>> matrix4 = [[2, "String", 7], [12, 34, 8]]
+    >>> print(matrix_divided(matrix4, 5))
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
-    >>> matrix5 = [[2.4, 3.6, 4.8], [96, 78, -22]] # doctest: +NORMALIZE_WHITESPACE
+    >>> matrix5 = [[2.4, 3.6, 4.8], [96, 78, -22]]
     >>> print(matrix_divided(matrix5, 3))
     [[0.8, 1.2, 1.6], [32.0, 26.0, -7.33]]
-    >>> print(matrix_divided(None, 3)) # doctest: +NORMALIZE_WHITESPACE
+    >>> print(matrix_divided(None, 3))
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
-    >>> print(matrix_divided("string", 3)) # doctest: +NORMALIZE_WHITESPACE
+    >>> print(matrix_divided("string", 3))
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
-    >>> print(matrix_divided(3, 3)) # doctest: +NORMALIZE_WHITESPACE
+    >>> print(matrix_divided(3, 3))
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
-    >>> print(matrix_divided(6.2, 3)) # doctest: +NORMALIZE_WHITESPACE
+    >>> print(matrix_divided(6.2, 3))
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
@@ -56,4 +56,12 @@ Now use it:
     Traceback (most recent call last):
         ...
     TypeError: div must be a number
+        >>> matrix_divided()
+    Traceback (most recent call last):
+       ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+    >>> matrix_divided([[1,2,4],[2,4]])
+    Traceback (most recent call last):
+       ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
