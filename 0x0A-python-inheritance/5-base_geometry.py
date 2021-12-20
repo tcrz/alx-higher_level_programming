@@ -5,4 +5,5 @@
 
 
 class BaseGeometry:
+    """Base Geometry Class"""
     pass
