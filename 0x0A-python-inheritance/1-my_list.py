@@ -8,5 +8,6 @@ class MyList(list):
     """Class that inherits from list"""
     def print_sorted(self):
         """prints the list sorted in ascending order"""
-        newlist = sorted(self)
+        newlist = self.copy()
+        newlist.sort()
         print(newlist)
