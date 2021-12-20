@@ -10,8 +10,9 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """initializes square instance"""
-        self.__size = size
         self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size
 
     def area(self):
         """area of a square obj"""
@@ -19,4 +20,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """return string format of area for Rectangle obj"""
-        return "[Square] {}/{}".format(self.__size, self.__size)
+        return str("[Square] {}/{}".format(self.__size, self.__size))
