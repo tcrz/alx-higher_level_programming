@@ -18,5 +18,5 @@ class Student:
             for x in attrs:
                 if x in self.__dict__:
                     my_dict.update({x: self.__dict__[x]})
-                return my_dict
-            return self.__dict__.copy()
+            return my_dict
+        return self.__dict__.copy()
