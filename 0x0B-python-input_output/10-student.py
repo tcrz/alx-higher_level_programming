@@ -11,7 +11,7 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attr=None)
+    def to_json(self, attr=None):
         """dictionary representation of a Student instance"""
         my_dict = dict()
         if type(attrs) is list and all(type(x) is str for x in attrs):
