@@ -24,4 +24,4 @@ if os.path.exists(file):
     data = data + arglist
     save_to_json_file(data, file)
 else:
-    save_to_json_file([], file)
+    save_to_json_file(arglist, file)
