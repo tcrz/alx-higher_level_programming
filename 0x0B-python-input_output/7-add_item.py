@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-"""
-7-add_item script
-"""
-
 import sys
 import os
 import json
