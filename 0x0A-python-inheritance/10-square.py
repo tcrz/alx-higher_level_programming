@@ -19,9 +19,3 @@ class Square(Rectangle):
     def area(self):
         """area of a square obj"""
         return self.__size ** 2
-
-
-
-s = Square("13")
-
-print(s)
