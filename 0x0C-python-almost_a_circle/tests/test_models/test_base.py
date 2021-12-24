@@ -11,7 +11,7 @@ class TestBaseClass(unittest.TestCase):
         """create Base objects"""
         self.b1 = Base()
         self.b2 = Base()
-        print(self.b1.id)
+        self.b3 = Base()
 
     def test_baseclass_attr(self):
         """check obj attributes"""
@@ -19,6 +19,7 @@ class TestBaseClass(unittest.TestCase):
         self.b1.id = 32
         self.assertEqual(self.b1.id, 32)
         self.assertEqual(self.b2.id, 2)
+        self.assertEqual(self.b3.id, 3)
 
     def tearDown(self):
         """delete base objects"""
