@@ -8,8 +8,7 @@ from models.base import Base
 
 class TestBaseClass(unittest.TestCase):
     def setUp(self):
-      Base._Base__nb_objects = 0
-
+        Base._Base__nb_objects = 0
 
     def test_baseclass_attr(self):
         """check obj attributes"""
@@ -23,6 +22,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(b3.id, 3)
 
     def test_classtype(self):
+        """check class type"""
         b4 = Base()
         self.assertTrue(isinstance(b4, Base))
 

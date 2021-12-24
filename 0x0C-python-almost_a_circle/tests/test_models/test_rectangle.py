@@ -11,7 +11,7 @@ import unittest
 class TestRectangleClass(unittest.TestCase):
     """various tests"""
     def setUp(self):
-       Base._Base__nb_objects = 0
+        Base._Base__nb_objects = 0
 
     def test_rectClass_attrs(self):
         """check rect obj attributes; id, width, height x and y"""
@@ -26,10 +26,8 @@ class TestRectangleClass(unittest.TestCase):
         r3 = Rectangle(5, 2, 3, 4, 12)
         self.assertEqual(r3.id, 12)
 
-#    def test_rectClass__attr(self)
-#       self.assertEqual(s
-
     def test_missing_args(self):
+        """check for missing arguments"""
         with self.assertRaises(TypeError):
             r1 = Rectangle(2)
         with self.assertRaises(TypeError):
@@ -42,7 +40,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertTrue(issubclass(type(r), Base))
 
     def test_err_rectClass_attr(self):
-        """check for errors; missing arguments and wrong arguments"""
+        """check for errorr ; wrong arguments types and value"""
         with self.assertRaises(TypeError):
             a = Rectangle("with", 3)
         with self.assertRaises(ValueError):
