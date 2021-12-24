@@ -11,7 +11,7 @@ class TestBaseClass(unittest.TestCase):
         """create Base objects"""
         self.b1 = Base()
         self.b2 = Base()
-        self.b3 = Base()
+        self.b3 = Base(None)
 
     def test_baseclass_attr(self):
         """check obj attributes"""
