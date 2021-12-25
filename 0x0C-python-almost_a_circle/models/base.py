@@ -15,14 +15,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base. __nb_objects
-
-    def integer_validator(self, name, value):
-        """validates attributes"""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if name == 'x' or name == 'y':
-            if value < 0:
-                raise ValueError("{} must be >= 0".format(name))
-        else:
-            if value <= 0:
-                raise ValueError("{} must be > 0".format(name))

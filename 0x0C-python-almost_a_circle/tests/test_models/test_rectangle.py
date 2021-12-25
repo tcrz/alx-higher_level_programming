@@ -59,6 +59,11 @@ class TestRectangleClass(unittest.TestCase):
             c = Rectangle(4, 3, 0, -1)
         with self.assertRaises(ValueError):
             e = Rectangle(10, 0)
+        with self.assertRaises(TypeError):
+            a = Rectangle(None, 3)
+        with self.assertRaises(TypeError):
+            a = Rectangle(14, [3, 3])
+
 
 
 if __name__ == '__main__':
