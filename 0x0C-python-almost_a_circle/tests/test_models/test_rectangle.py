@@ -75,16 +75,29 @@ class TestRectangleClass(unittest.TestCase):
         r1 = Rectangle(320, 452)
         self.assertEqual(r1.area(), 144640)
 
-    def test_rect_display(self):
+    def test_rect_display_method(self):
         """check rect display"""
         temp_stdout = StringIO()
         with contextlib.redirect_stdout(temp_stdout):
-            r = Rectangle(3, 1)
+            r = Rectangle(3, 3)
             r.display()
         output = temp_stdout.getvalue().strip()
-        assert output == '###'
+        self.assertEqual(output, '###\n###\n###')
 
-    
+        temp_stdout2 = StringIO()
+        with contextlib.redirect_stdout(temp_stdout2):
+            r1 = Rectangle(3, 2, 2, 1)
+            r1.display()
+        output2 = temp_stdout2.getvalue()
+        self.assertEqual(output2, "\n  ###\n  ###\n")
+
+    def test_rect_str_method(self):
+        temp_stdout = StringIO()
+        with contextlib.redirect_stdout(temp_stdout):
+            r = Rectangle(5, 2, 7, 3)
+            print(r)
+        output = temp_stdout.getvalue().strip()
+        assert output == '[Rectangle] (1) 7/3 - 5/2'
 
 
 if __name__ == '__main__':
