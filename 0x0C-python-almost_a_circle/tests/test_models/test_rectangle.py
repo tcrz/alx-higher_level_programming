@@ -6,6 +6,8 @@ rectangle class unittest
 from models.base import Base
 from models.rectangle import Rectangle
 import unittest
+import contextlib
+from io import StringIO
 
 
 class TestRectangleClass(unittest.TestCase):
@@ -72,6 +74,18 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r.area(), 21)
         r1 = Rectangle(320, 452)
         self.assertEqual(r1.area(), 144640)
+
+    def test_rect_display(self):
+        """check rect display"""
+        temp_stdout = StringIO()
+        with contextlib.redirect_stdout(temp_stdout):
+            r = Rectangle(3, 1)
+            r.display()
+        output = temp_stdout.getvalue().strip()
+        assert output == '###'
+
+    
+
 
 if __name__ == '__main__':
     unittest.main()
