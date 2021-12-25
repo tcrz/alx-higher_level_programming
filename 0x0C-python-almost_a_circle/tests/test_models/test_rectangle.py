@@ -40,7 +40,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertTrue(issubclass(type(r), Base))
 
     def test_err_rectClass_attr(self):
-        """check for errorr ; wrong arguments types and value"""
+        """check for error ; wrong arguments types and value"""
         with self.assertRaises(TypeError):
             a = Rectangle("with", 3)
         with self.assertRaises(ValueError):
@@ -48,23 +48,30 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             c = Rectangle(4, 3, -2, 1)
         with self.assertRaises(TypeError):
-            d = Rectangle(4, "Nickels")
-        with self.assertRaises(ValueError):
-            e = Rectangle(0, 4)
+            d = Rectangle(4, True)
+        with self.assertRaises(TypeError):
+            e = Rectangle((0,), 4)
         with self.assertRaises(TypeError):
             a = Rectangle(4, 3, 2, "4")
         with self.assertRaises(TypeError):
             a = Rectangle(4, 3, "2", 4)
-        with self.assertRaises(ValueError):
-            c = Rectangle(4, 3, 0, -1)
+        with self.assertRaises(TypeError):
+            c = Rectangle(4, 3, 0, 1.8)
         with self.assertRaises(ValueError):
             e = Rectangle(10, 0)
         with self.assertRaises(TypeError):
             a = Rectangle(None, 3)
         with self.assertRaises(TypeError):
             a = Rectangle(14, [3, 3])
+        with self.assertRaises(TypeError):
+            a = Rectangle(14, {3, 3}, 3, 4)
 
-
+    def test_area_method(self):
+        """check for correct area value"""
+        r = Rectangle(3, 7)
+        self.assertEqual(r.area(), 21)
+        r1 = Rectangle(320, 452)
+        self.assertEqual(r1.area(), 144640)
 
 if __name__ == '__main__':
     unittest.main()
