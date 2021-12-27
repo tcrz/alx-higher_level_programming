@@ -121,9 +121,9 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r1.x, 4)
         self.assertEqual(r1.__str__(), "[Rectangle] (90) 4/10 - 2/8")
         r1.update(89, 2, 3, 4, 5, 6, 7)
-        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")      
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
         r1.update()
-        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")    
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3") 
         with self.assertRaises(TypeError):
             r1.update(2, 4, 6, "vsd")
         with self.assertRaises(ValueError):
@@ -148,11 +148,7 @@ class TestRectangleClass(unittest.TestCase):
             r1.update(height=65, x=2, width="high")
         with self.assertRaises(ValueError):
             r1.update(height=65, x=-2, width="high")
-        
-        
 
-
-        
 
 if __name__ == '__main__':
     unittest.main()
