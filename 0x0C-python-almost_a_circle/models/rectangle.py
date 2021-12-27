@@ -90,3 +90,10 @@ class Rectangle(Base):
         """returns given string output"""
         return str("[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args):
+        if args:
+            x = len(args)
+            list_attrs = list(self.__dict__)[:x]
+            for i in range(len(list_attrs)):
+                setattr(self, list_attrs[i], args[i])

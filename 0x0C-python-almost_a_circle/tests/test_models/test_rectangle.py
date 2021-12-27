@@ -15,7 +15,7 @@ class TestRectangleClass(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
 
-    def test_rectClass_attrs(self):
+    def test_attrs(self):
         """check rect obj attributes; id, width, height x and y"""
         r1 = Rectangle(5, 7)
         self.assertEqual(r1.id, 1)
@@ -41,7 +41,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertTrue(isinstance(r, Rectangle))
         self.assertTrue(issubclass(type(r), Base))
 
-    def test_err_rectClass_attr(self):
+    def test_err_attr(self):
         """check for error ; wrong arguments types and value"""
         with self.assertRaises(TypeError):
             a = Rectangle("with", 3)
@@ -75,7 +75,7 @@ class TestRectangleClass(unittest.TestCase):
         r1 = Rectangle(320, 452)
         self.assertEqual(r1.area(), 144640)
 
-    def test_rect_display_method(self):
+    def test_display_method(self):
         """check rect display"""
         temp_stdout = StringIO()
         with contextlib.redirect_stdout(temp_stdout):
@@ -91,13 +91,45 @@ class TestRectangleClass(unittest.TestCase):
         output2 = temp_stdout2.getvalue()
         self.assertEqual(output2, "\n  ###\n  ###\n")
 
-    def test_rect_str_method(self):
+        with self.assertRaises(TypeError) as x:
+            r1 = Rectangle(9, 6)
+            r1.display(9)
+
+    def test_str_method(self):
         temp_stdout = StringIO()
         with contextlib.redirect_stdout(temp_stdout):
             r = Rectangle(5, 2, 7, 3)
             print(r)
         output = temp_stdout.getvalue().strip()
         assert output == '[Rectangle] (1) 7/3 - 5/2'
+
+    def test_update_args_method(self):
+        """test update method with *args and *kwargs"""
+        r1 = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r1.__str__(), "[Rectangle] (1) 10/10 - 10/10")
+
+        r1.update(90)
+        self.assertEqual(r1.id, 90)
+        self.assertEqual(r1.__str__(), "[Rectangle] (90) 10/10 - 10/10")
+
+        r1.update(54, 2)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.__str__(), "[Rectangle] (54) 10/10 - 2/10")
+
+        r1.update(89, 2, 8)
+        self.assertEqual(r1.height, 8)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 2/8")
+
+        r1.update(90, 2, 8, 4)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.__str__(), "[Rectangle] (90) 4/10 - 2/8")
+
+        r1.update(89, 2, 3, 4, 5, 6, 7)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+
+        r1.update()
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+
 
 
 if __name__ == '__main__':
