@@ -105,17 +105,17 @@ class Rectangle(Base):
             if len(args) > 4:
                 self.y = args[4]
         elif kwargs:
-            for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                if key == "width":
-                    self.width = value
-                if key == "height":
-                    self.height = value
-                if key == "x":
-                    self.x = value
-                if key == "y":
-                    self.y = value
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = v
+                if k == "width":
+                    self.width = v
+                if k == "height":
+                    self.height = v
+                if k == "x":
+                    self.x = v
+                if k == "y":
+                    self.y = v
             # --------------------------------
             # kd = {'id': 'id', 'width': '_Rectangle__width',
             #        'height': '_Rectangle__height',
