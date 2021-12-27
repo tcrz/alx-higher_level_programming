@@ -96,6 +96,7 @@ class TestRectangleClass(unittest.TestCase):
             r1.display(9)
 
     def test_str_method(self):
+        """check output for str method"""
         temp_stdout = StringIO()
         with contextlib.redirect_stdout(temp_stdout):
             r = Rectangle(5, 2, 7, 3)
@@ -104,33 +105,50 @@ class TestRectangleClass(unittest.TestCase):
         assert output == '[Rectangle] (1) 7/3 - 5/2'
 
     def test_update_args_method(self):
-        """test update method with *args and *kwargs"""
+        """check update method with *args and associated errors"""
         r1 = Rectangle(10, 10, 10, 10)
         self.assertEqual(r1.__str__(), "[Rectangle] (1) 10/10 - 10/10")
-
         r1.update(90)
         self.assertEqual(r1.id, 90)
         self.assertEqual(r1.__str__(), "[Rectangle] (90) 10/10 - 10/10")
-
         r1.update(54, 2)
         self.assertEqual(r1.width, 2)
         self.assertEqual(r1.__str__(), "[Rectangle] (54) 10/10 - 2/10")
-
         r1.update(89, 2, 8)
         self.assertEqual(r1.height, 8)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 2/8")
-
         r1.update(90, 2, 8, 4)
         self.assertEqual(r1.x, 4)
         self.assertEqual(r1.__str__(), "[Rectangle] (90) 4/10 - 2/8")
-
         r1.update(89, 2, 3, 4, 5, 6, 7)
-        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
-
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")      
         r1.update()
-        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")    
+        with self.assertRaises(TypeError):
+            r1.update(2, 4, 6, "vsd")
+        with self.assertRaises(ValueError):
+            r1.update(2, 4, 6, -3)
+
+    def test_update_kwargs_method(self):
+        """check update method with **kwargs and associated errors"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(height=1)
+        self.assertEqual(r1.height, 1)
+        r1.update(width=1, x=2)
+        self.assertEqual(r1.width, 1)
+        r1.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(r1.__str__(), '[Rectangle] (89) 3/1 - 2/1')
+        r1.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(r1.__str__(), '[Rectangle] (89) 1/3 - 4/2')
+        with self.assertRaises(TypeError):
+            r1.update(x='kite')
+        with self.assertRaises(TypeError):
+            r1.update(height=65, x=2, width="high")
+        with self.assertRaises(ValueError):
+            r1.update(height=65, x=-2, width="high")
 
 
+        
 
 if __name__ == '__main__':
     unittest.main()
