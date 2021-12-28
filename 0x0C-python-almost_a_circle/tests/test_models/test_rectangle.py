@@ -125,7 +125,7 @@ class TestRectangleClass(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5, 6, 7)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
         r1.update()
-        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3") 
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(height=1)
         self.assertEqual(r1.height, 1)
@@ -137,8 +137,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r1.__str__(), '[Rectangle] (89) 1/3 - 4/2')
         r1.update(2, 5, 4, 6, height=65, x=2, width=15)
         self.assertEqual(r1.__str__(), '[Rectangle] (2) 6/3 - 5/4')
-        
-        
+
     def test_errors_update_method(self):
         """check update method for errors"""
         r1 = Rectangle(10, 10, 10, 10)
@@ -156,7 +155,8 @@ class TestRectangleClass(unittest.TestCase):
     def test_to_dictionary_method(self):
         """check to_dictionary method"""
         r1 = Rectangle(10, 2, 1, 9)
-        self.assertEqual(r1.to_dictionary(), {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+        self.assertEqual(r1.to_dictionary(),
+                         {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
         self.assertTrue(type(r1.to_dictionary()), dict)
         r2 = Rectangle(1, 1)
         r2.update(**r1.to_dictionary())
