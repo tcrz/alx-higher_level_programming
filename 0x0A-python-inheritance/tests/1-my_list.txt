@@ -41,5 +41,8 @@ Now use it:
     ['s', 'd', 's', 'd', 'f']
     >>> newlist.print_sorted()
     ['d', 'd', 'f', 's', 's']
-
+    >>> n = list3.print_sorted()
+    [4.3, 4.4, 5.4]
+    >>> n
+    
 
