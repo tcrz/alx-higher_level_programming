@@ -9,7 +9,9 @@ class Square(Rectangle):
     """defines a square class"""
     def __init__(self, size, x=0, y=0, id=None):
         """initialises square object with given atrributes"""
-        super().__init__(x=x, y=y, id=id, width=size, height=size)
+        self.size = size
+        super().__init__(size, size, x, y, id)
+        # super().__init__(x=x, y=y, id=id, width=size, height=size)
 
     def __str__(self):
         """returns string output"""

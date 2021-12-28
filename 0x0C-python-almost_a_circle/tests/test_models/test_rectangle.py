@@ -153,6 +153,18 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             r1.update(height=65, x=-2, width="high")
 
+    def test_to_dictionary_method(self):
+        """check to_dictionary method"""
+        r1 = Rectangle(10, 2, 1, 9)
+        self.assertEqual(r1.to_dictionary(), {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+        self.assertTrue(type(r1.to_dictionary()), dict)
+        r2 = Rectangle(1, 1)
+        r2.update(**r1.to_dictionary())
+        self.assertEqual(r2.__str__(), '[Rectangle] (1) 1/9 - 10/2')
+        self.assertFalse(r1 == r2)
+        with self.assertRaises(TypeError):
+            r1.to_dictionary(4)
+
 
 if __name__ == '__main__':
     unittest.main()
