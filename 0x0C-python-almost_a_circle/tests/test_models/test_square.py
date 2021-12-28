@@ -81,7 +81,7 @@ class TestSquareClass(unittest.TestCase):
             r1.display()
         output2 = temp_stdout2.getvalue()
         self.assertEqual(output2, '\n  ###\n  ###\n  ###\n')
-        
+
     def test_errors_display_method(self):
         """check for errors"""
         with self.assertRaises(TypeError) as x:
@@ -129,7 +129,7 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(s.__str__(), '[Square] (89) 1/3 - 4')
         s.update(2, 5, 4, 6, size=65, x=2)
         self.assertEqual(s.__str__(), '[Square] (2) 4/6 - 5')
-    
+
     def test_errors_update_method(self):
         """check update method for errors"""
         s = Square(3, 3)
@@ -143,7 +143,6 @@ class TestSquareClass(unittest.TestCase):
             s.update(x=2, size="high")
         with self.assertRaises(ValueError):
             s.update(size=65, x=-8)
-
 
 
 if __name__ == '__main__':
