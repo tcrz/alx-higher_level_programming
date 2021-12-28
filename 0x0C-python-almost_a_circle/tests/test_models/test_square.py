@@ -81,7 +81,9 @@ class TestSquareClass(unittest.TestCase):
             r1.display()
         output2 = temp_stdout2.getvalue()
         self.assertEqual(output2, '\n  ###\n  ###\n  ###\n')
-
+        
+    def test_errors_display_method(self):
+        """check for errors"""
         with self.assertRaises(TypeError) as x:
             r1 = Square(9, 6)
             r1.display(9)
@@ -94,6 +96,54 @@ class TestSquareClass(unittest.TestCase):
             print(r)
         output = temp_stdout.getvalue().strip()
         self.assertEqual(output, '[Square] (20) 3/1 - 3')
+
+    def test_update_method(self):
+        """check update method with *args and **kwargs arguments"""
+        s = Square(3, 3)
+        self.assertEqual(s.__str__(), '[Square] (1) 3/0 - 3')
+        s.update(90)
+        self.assertEqual(s.id, 90)
+        self.assertEqual(s.__str__(), "[Square] (90) 3/0 - 3")
+        s.update(54, 2)
+        self.assertEqual(s.width, 2)
+        self.assertEqual(s.__str__(), "[Square] (54) 3/0 - 2")
+        s.update(89, 2, 8)
+        self.assertEqual(s.size, 2)
+        self.assertEqual(s.height, 2)
+        self.assertEqual(s.__str__(), "[Square] (89) 8/0 - 2")
+        s.update(90, 2, 8, 4)
+        self.assertEqual(s.x, 8)
+        self.assertEqual(s.y, 4)
+        self.assertEqual(s.__str__(), "[Square] (90) 8/4 - 2")
+        s.update(89, 2, 3, 4, 5, 6, 7)
+        self.assertEqual(s.__str__(), "[Square] (89) 3/4 - 2")
+        s.update()
+        self.assertEqual(s.__str__(), "[Square] (89) 3/4 - 2")
+        s.update(size=1)
+        self.assertEqual(s.height, 1)
+        s.update(size=1, x=2)
+        self.assertEqual(s.width, 1)
+        s.update(y=1, size=22, x=3, id=89)
+        self.assertEqual(s.__str__(), '[Square] (89) 3/1 - 22')
+        s.update(x=1, y=3, size=4)
+        self.assertEqual(s.__str__(), '[Square] (89) 1/3 - 4')
+        s.update(2, 5, 4, 6, size=65, x=2)
+        self.assertEqual(s.__str__(), '[Square] (2) 4/6 - 5')
+    
+    def test_errors_update_method(self):
+        """check update method for errors"""
+        s = Square(3, 3)
+        with self.assertRaises(TypeError):
+            s.update(2, "4", 6)
+        with self.assertRaises(ValueError):
+            s.update(2, 4, 6, -3)
+        with self.assertRaises(TypeError):
+            s.update(x='kite')
+        with self.assertRaises(TypeError):
+            s.update(x=2, size="high")
+        with self.assertRaises(ValueError):
+            s.update(size=65, x=-8)
+
 
 
 if __name__ == '__main__':

@@ -91,6 +91,8 @@ class TestRectangleClass(unittest.TestCase):
         output2 = temp_stdout2.getvalue()
         self.assertEqual(output2, "\n  ###\n  ###\n")
 
+    def test_errors_display_method(self):
+        """check for errors"""
         with self.assertRaises(TypeError) as x:
             r1 = Rectangle(9, 6)
             r1.display(9)
@@ -102,10 +104,10 @@ class TestRectangleClass(unittest.TestCase):
             r = Rectangle(5, 2, 7, 3)
             print(r)
         output = temp_stdout.getvalue().strip()
-        assert output == '[Rectangle] (1) 7/3 - 5/2'
+        self.assertEqual(output, '[Rectangle] (1) 7/3 - 5/2')
 
     def test_update_args_method(self):
-        """check update method with *args and associated errors"""
+        """check update method with *args and **kwargs arguments"""
         r1 = Rectangle(10, 10, 10, 10)
         self.assertEqual(r1.__str__(), "[Rectangle] (1) 10/10 - 10/10")
         r1.update(90)
@@ -124,13 +126,6 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
         r1.update()
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3") 
-        with self.assertRaises(TypeError):
-            r1.update(2, 4, 6, "vsd")
-        with self.assertRaises(ValueError):
-            r1.update(2, 4, 6, -3)
-
-    def test_update_kwargs_method(self):
-        """check update method with **kwargs and associated errors"""
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(height=1)
         self.assertEqual(r1.height, 1)
@@ -142,6 +137,15 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r1.__str__(), '[Rectangle] (89) 1/3 - 4/2')
         r1.update(2, 5, 4, 6, height=65, x=2, width=15)
         self.assertEqual(r1.__str__(), '[Rectangle] (2) 6/3 - 5/4')
+        
+        
+    def test_errors_update_method(self):
+        """check update method for errors"""
+        r1 = Rectangle(10, 10, 10, 10)
+        with self.assertRaises(TypeError):
+            r1.update(2, 4, 6, "vsd")
+        with self.assertRaises(ValueError):
+            r1.update(2, 4, 6, -3)
         with self.assertRaises(TypeError):
             r1.update(x='kite')
         with self.assertRaises(TypeError):
