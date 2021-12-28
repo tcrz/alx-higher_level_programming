@@ -62,6 +62,32 @@ Now use it:
     Traceback (most recent call last):
        ...
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-    >>> BG = __import__('7-base_geometry').BaseGeometry
-    >>> BG = __import__('7-base_geometry').BaseGeometry
+    >>> obj = BaseGeometry()
+    >>> obj.integer_validator("width", 7)
+    >>> obj.integer_validator("height", 7)
+    >>> obj.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+    >>> obj.integer_validator("height", [7])
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+    >>> obj.integer_validator("height", (7,))
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+    >>> obj.integer_validator("height", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+    >>> obj.integer_validator("height", {3,5})
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+    >>> obj.integer_validator("height", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: height must be an integer
+
     
