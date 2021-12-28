@@ -15,6 +15,7 @@ class Square(Rectangle):
         """returns string output"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.width)
+
     @property
     def size(self):
         """size getter"""
@@ -29,7 +30,7 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
-    
+
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute via *args or **kwargs"""
         if args:
@@ -51,4 +52,3 @@ class Square(Rectangle):
                     self.x = v
                 if k == "y":
                     self.y = v
-            
