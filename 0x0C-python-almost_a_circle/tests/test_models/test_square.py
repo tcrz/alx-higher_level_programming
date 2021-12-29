@@ -144,6 +144,19 @@ class TestSquareClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             s.update(size=65, x=-8)
 
+    def test_to_dictionary_method(self):
+        """check to_dictionary method"""
+        s = Square(10, 2, 1)
+        self.assertEqual(s.to_dictionary(), {'x': 2, 'y': 1,
+                                             'id': 1, 'size': 10})
+        self.assertTrue(type(s.to_dictionary()), dict)
+        s2 = Square(1, 1)
+        s2.update(**s.to_dictionary())
+        self.assertEqual(s2.__str__(), '[Square] (1) 2/1 - 10')
+        self.assertFalse(s == s2)
+        with self.assertRaises(TypeError):
+            s.to_dictionary(4)
+
 
 if __name__ == '__main__':
     unittest.main()
