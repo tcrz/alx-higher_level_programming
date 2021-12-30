@@ -25,22 +25,22 @@ class TestBaseClass(unittest.TestCase):
     def test_classtype(self):
         """check class type"""
         b4 = Base()
-        self.assertTrue(isinstance(b4, Base))
+        self.assertIsInstance(b4, Base)
 
     def test_to_json_string(self):
         """test to_json_string static method"""
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        self.assertTrue(json_dictionary, [{"x": 2, "width": 10, "id": 1,
-                                           "height": 7, "y": 8}])
+        self.assertCountEqual(
+            json_dictionary,'[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]')
         json_dictionary = Base.to_json_string([])
-        self.assertTrue(json_dictionary, [])
+        self.assertEqual(json_dictionary, '[]')
         json_dictionary = Base.to_json_string(None)
-        self.assertTrue(json_dictionary, [])
+        self.assertEqual(json_dictionary, '[]')
 
     def test_err_to_json_method(self):
-        """test for errors"""
+        """test for errors with wrong arguments"""
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         with self.assertRaises(TypeError):
@@ -49,6 +49,22 @@ class TestBaseClass(unittest.TestCase):
             json_dictionary = Base.to_json_string("Jhan")
         with self.assertRaises(TypeError):
             json_dictionary = Base.to_json_string()
+        with self.assertRaises(TypeError):
+            json_dictionary = Base.to_json_string("Jhan", [{'k':8}])
+        with self.assertRaises(TypeError):
+            json_dictionary = Base.to_json_string(dictionary)
+        with self.assertRaises(TypeError):
+            json_dictionary = Base.to_json_string(True)
+        with self.assertRaises(TypeError):
+            json_dictionary = Base.to_json_string(5)
+        with self.assertRaises(TypeError):
+            json_dictionary = Base.to_json_string(5.3)
+        with self.assertRaises(TypeError):
+            json_dictionary = Base.to_json_string([8,5])
+        with self.assertRaises(TypeError):
+            json_dictionary = Base.to_json_string((8,5))
+        with self.assertRaises(TypeError):
+            json_dictionary = Base.to_json_string({'k':8})
 
 
 if __name__ == '__main__':

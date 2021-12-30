@@ -149,6 +149,8 @@ class TestSquareClass(unittest.TestCase):
         s = Square(10, 2, 1)
         self.assertEqual(s.to_dictionary(), {'x': 2, 'y': 1,
                                              'id': 1, 'size': 10})
+        self.assertCountEqual(s.to_dictionary(), {'x': 2, 'y': 1,
+                                                  'id': 1, 'size': 10})
         self.assertTrue(type(s.to_dictionary()), dict)
         s2 = Square(1, 1)
         s2.update(**s.to_dictionary())

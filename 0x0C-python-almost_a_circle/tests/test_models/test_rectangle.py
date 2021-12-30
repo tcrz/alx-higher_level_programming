@@ -155,8 +155,9 @@ class TestRectangleClass(unittest.TestCase):
     def test_to_dictionary_method(self):
         """check to_dictionary method"""
         r1 = Rectangle(10, 2, 1, 9)
-        self.assertEqual(r1.to_dictionary(),
-                         {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+        dictionary = r1.to_dictionary()
+        self.assertEqual(r1.to_dictionary(), dictionary)
+        self.assertCountEqual(r1.to_dictionary(), dictionary)
         self.assertTrue(type(r1.to_dictionary()), dict)
         r2 = Rectangle(1, 1)
         r2.update(**r1.to_dictionary())
