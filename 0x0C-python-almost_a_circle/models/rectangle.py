@@ -116,20 +116,6 @@ class Rectangle(Base):
                     self.x = v
                 if k == "y":
                     self.y = v
-            # --------------------------------
-            # kd = {'id': 'id', 'width': '_Rectangle__width',
-            #        'height': '_Rectangle__height',
-            #        'x': '_Rectangle__x', 'y': '_Rectangle__y'}
-            # list_attr = list(self.__dict__)
-            # for k, v in kwargs.items():
-            #     self.__dict__[kd[k]] = v
-            # ------------------------------
-            # x = len(kwargs)
-            # list_attrs = list(self.__dict__)
-            # for i in range(len(list_attrs)):
-            #     for k, v in kwargs.items():
-            #         if k == list_attrs[i][12:] or k == list_attrs[i]:
-            #             setattr(self, list_attrs[i], v)
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle Object"""

@@ -111,20 +111,3 @@ class Base:
                         dummy.update(size=k[0], x=k[1], y=k[2], id=k[3])
                         list_objs.append(dummy)
         return list_objs
-        # filename = cls.__name__ + ".csv"
-        # l = []
-        # if os.path.exists(filename):
-        #     with open(filename, 'r') as f:
-        #         reader = csv.reader(f, delimiter=',')
-        #         if cls.__name__ == 'Rectangle':
-        #             fields = ['id', 'width', 'height', 'x', 'y']
-        #         elif cls.__name__ == 'Square':
-        #             fields = ['id', 'size', 'x', 'y']
-        #         for x, row in enumerate(reader):
-        #             if x > 0:
-        #                 i = cls(1, 1)
-        #                 for j, e in enumerate(row):
-        #                     if e:
-        #                         setattr(i, fields[j], int(e))
-        #                 l.append(i)
-        # return l
