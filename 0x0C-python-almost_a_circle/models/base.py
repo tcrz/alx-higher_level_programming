@@ -6,6 +6,8 @@ import json
 import sys
 import os
 import csv
+import turtle
+# from random import randrange
 
 
 class Base:
@@ -114,3 +116,38 @@ class Base:
                         dummy.update(size=k[0], x=k[1], y=k[2], id=k[3])
                         list_objs.append(dummy)
         return list_objs
+
+    @staticmethod
+    def draw_instance(t, x, y, w, h):
+        t.up()
+        t.goto(x, y)
+        t.pd()
+        t.fd(w)
+        t.left(90)
+        t.fd(h)
+        t.left(90)
+        t.fd(w)
+        t.left(90)
+        t.fd(h)
+        t.left(90)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draw instances of rectangles and squares"""
+        if not list_squares or not list_rectangles:
+            return []
+        if type(list_rectangles) is list and type(list_squares) is list:
+            if (all(isinstance(i, Base) for i in list_rectangles) and
+               all(isinstance(i, Base) for i in list_squares)):
+                t = turtle.Turtle()
+                turtle.bgcolor("purple")
+                t.pensize(2)
+                for i in (list_rectangles):
+                    t.color("red", "pink")
+                    Base.draw_instance(t, i.x, i.y, i.width, i.height)
+                turtle.bgcolor("orange")
+                for i in list_squares:
+                    t.pencolor("yellow")
+                    Base.draw_instance(t, i.x, i.y, i.width, i.height)
+            else:
+                raise TypeError("Must be a list of instances")
