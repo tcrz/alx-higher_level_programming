@@ -46,8 +46,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation json_string"""
-        if not json_string or json_string == '':
-            return '[]'
+        if not json_string:
+            return []
         if type(json_string) is not str:
             raise TypeError("Not a string")
         return json.loads(json_string)
