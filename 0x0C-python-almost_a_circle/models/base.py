@@ -7,7 +7,7 @@ import sys
 import os
 import csv
 import turtle
-# from random import randrange
+
 
 
 class Base:
