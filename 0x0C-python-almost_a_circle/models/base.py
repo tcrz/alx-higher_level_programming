@@ -55,6 +55,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
+        if not dictionary:
+            raise TypeError("Must be keyword arguments")
         dummy = cls(4, 3)
         dummy.update(**dictionary)
         return dummy
