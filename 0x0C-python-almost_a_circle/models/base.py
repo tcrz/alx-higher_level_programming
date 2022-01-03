@@ -128,7 +128,6 @@ class Base:
         t.fd(w)
         t.left(90)
         t.fd(h)
-        t.left(90)
 
     @staticmethod
     def draw(list_rectangles, list_squares):
@@ -139,8 +138,9 @@ class Base:
             if (all(isinstance(i, Base) for i in list_rectangles) and
                all(isinstance(i, Base) for i in list_squares)):
                 t = turtle.Turtle()
+                t.shape("turtle")
                 turtle.bgcolor("purple")
-                t.pensize(2)
+                t.pensize(3)
                 for i in (list_rectangles):
                     t.color("red", "pink")
                     Base.draw_instance(t, i.x, i.y, i.width, i.height)
