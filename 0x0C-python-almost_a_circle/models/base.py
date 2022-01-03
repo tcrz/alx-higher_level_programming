@@ -9,7 +9,6 @@ import csv
 import turtle
 
 
-
 class Base:
     """defining base class"""
     __nb_objects = 0
