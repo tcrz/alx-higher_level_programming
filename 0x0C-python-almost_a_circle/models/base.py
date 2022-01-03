@@ -118,6 +118,7 @@ class Base:
 
     @staticmethod
     def draw_instance(t, x, y, w, h):
+        """drawing sequence"""
         t.up()
         t.goto(x, y)
         t.pd()
