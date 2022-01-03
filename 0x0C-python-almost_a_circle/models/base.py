@@ -58,7 +58,7 @@ class Base:
         if cls.__name__ == 'Rectangle':
             dummy = cls(4, 3)
         elif cls.__name__ == 'Square':
-            dummy = cls(4, 3)
+            dummy = cls(4)
         dummy.update(**dictionary)
         return dummy
 
