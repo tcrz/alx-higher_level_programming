@@ -9,4 +9,3 @@ MY CODE HERE
 */                                                                                                                                      
 myObject.value = 89;                                                                                                                    
 console.log(myObject);
-         
