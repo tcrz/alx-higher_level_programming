@@ -1,5 +1,5 @@
 #!/usr/bin/node
-dict = require('./101-data').dict;
+const dict = require('./101-data').dict;
 const newdict = {};
 Object.entries(dict).forEach(([k, v]) => {
   newdict[v] = [];
