@@ -9,6 +9,6 @@ fs.readFile(argv[0], 'utf8', function (err, data) {
     const contents2 = data;
     fs.appendFile(argv[2], contents + contents2, function (err) {
       if (err) throw (err);
-    })
-  })
+    });
+  });
 });
