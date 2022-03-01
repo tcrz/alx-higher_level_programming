@@ -21,4 +21,4 @@ Files | Description
 [10-converter.js](./10-converter.js) | JS function that converts a number from base 10 to another base passed as argument
 [100-map.js](./100-map.js) | JS function that imports an array (100-data.js) and computes a new array.
 [101-sorted.js](./101-sorted.js) | JS function that imports a dictionary(101-data.js) of occurrences by user id and computes a dictionary of user ids by occurrence.
-[102-concat.js](./101-concat.js) | JS function that concats 2 files.
+[102-concat.js](./102-concat.js) | JS function that concats 2 files.
