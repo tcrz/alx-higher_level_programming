@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const Rectangle = require('./5-rectangle');
+const Rectangle = require('./5-square');
 module.exports = class Square extends Rectangle {
   charPrint (c) {
     let str = '';
