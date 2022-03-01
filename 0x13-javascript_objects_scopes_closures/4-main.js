@@ -7,12 +7,8 @@ r1.print();
 
 console.log('Double:');
 r1.double();
-console.log('----------');
-console.log('Normal:');
 r1.print();
 
 console.log('Rotate:');
 r1.rotate();
-console.log('----------')
-console.log('Normal:');
 r1.print();
