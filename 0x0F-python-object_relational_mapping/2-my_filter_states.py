@@ -5,8 +5,8 @@ import sys
 argv = (sys.argv)[1:]
 db = MySQLdb.connect(user=argv[0], passwd=argv[1], db=argv[2])
 cur = db.cursor()
-cur.execute("SELECT * FROM states WHERE name=%s ORDER BY states.id ASC",
-            (argv[3],))
+cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY states.id ASC"
+            .format(argv[3],))
 rows = cur.fetchall()
 for row in rows:
     print(row)
