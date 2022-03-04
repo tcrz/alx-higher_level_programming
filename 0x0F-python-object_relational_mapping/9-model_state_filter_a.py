@@ -23,6 +23,4 @@ if __name__ == '__main__':
 
     for row in s.query(State).filter(State.name.contains('a'))\
                 .order_by(State.id.asc()):
-        print(row.id, end="")
-        print(': ', end="")
-        print(row.name)
+        print("{} : {}".format(row.id, row.name))

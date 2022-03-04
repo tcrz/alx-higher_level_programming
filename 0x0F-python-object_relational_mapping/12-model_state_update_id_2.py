@@ -9,6 +9,8 @@ script that changes the name of a State object from the database hbtn_0e_6_usa
     - script connecta to a MySQL server running on localhost at port 3306
     - Change the name of the State where id = 2 to New Mexico
 """
+
+
 if __name__ == '__main__':
     import sys
     from sqlalchemy import create_engine

@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-script that deletes all State objects with a name containing the 
+script that deletes all State objects with a name containing the
 letter 'a' from the database hbtn_0e_6_usa
 
-    - script takes 3 arguments: mysql username, mysql password and database name
+    - script takes 3 arguments: mysql username, mysql password and databasename
     - uses the module SQLAlchemy
     - imports State and Base from model_state
     - script connects to a MySQL server running on localhost at port 3306
