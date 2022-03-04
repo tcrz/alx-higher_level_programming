@@ -8,6 +8,7 @@ script that adds the State object “Louisiana” to the database hbtn_0e_6_usa
     - script should connect to a MySQL server running on localhost at port 3306
     Print the new states.id after creation
 """
+
 if __name__ == '__main__':
     import sys
     from sqlalchemy import create_engine
