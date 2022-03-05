@@ -12,11 +12,14 @@ from the database hbtn_0e_0_usa:
 
 if __name__ == '__main__':
     import MySQLdb
+    import sys
 
-    db = MySQLdb.connect(user="root", passwd="crzctrl", db="hbtn_0e_0_usa")
+    argv = (sys.argv)[1:]
+    db = MySQLdb.connect(user=argv[0], passwd=argv[1], db=argv[2])
     cur = db.cursor()
     cur.execute("""SELECT * FROM states
-                WHERE name LIKE 'N%' ORDER BY states.id ASC""")
+                WHERE name LIKE 'N%' ORDER BY states.id ASC;""")
     rows = cur.fetchall()
     for r in rows:
-        print(r)
+        if r[1].startswith("N"):
+            print(r)
