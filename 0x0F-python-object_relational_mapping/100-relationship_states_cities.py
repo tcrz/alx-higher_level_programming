@@ -28,6 +28,6 @@ if __name__ == '__main__':
     new_state.cities = [
         City(name="San Francisco", state_id=1)
         ]
-    print(new_state.cities)
+    # print(new_state.cities)
     s.add(new_state)
     s.commit()
