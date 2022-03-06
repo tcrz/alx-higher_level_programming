@@ -21,8 +21,5 @@ if __name__ == '__main__':
     cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY states.id ASC"
                 .format(argv[3]))
     rows = cur.fetchall()
-    if len(rows) > 0:
-        for row in rows:
-            print(row)
-    else:
-        pass
+    for row in rows:
+        print(row)
