@@ -28,4 +28,4 @@ if __name__ == '__main__':
     if row:
         print(row.id)
     else:
-        print("Not Found")
+        print("Not found")
