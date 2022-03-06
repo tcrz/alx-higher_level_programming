@@ -21,7 +21,7 @@ if __name__ == '__main__':
     cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY states.id ASC"
                 .format(argv[3]))
     rows = cur.fetchall()
-    if rows:
+    if rows is not None:
         for row in rows:
             print(row)
     else:
