@@ -23,10 +23,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     s = Session()
 
-    if not s.query(State):
+    if not s.query(State).first():
         print("Nothing")
     else:
-        for row in s.query(State).order_by(State.id)[:1]:
-            print(row.id, end="")
-            print(': ', end="")
-            print(row.name)
+        row = (s.query(State).first())
+        print('{}: {}'.format(row.id, row.name))
