@@ -24,8 +24,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     s = Session()
 
-    row = s.query(State).filter(State.name == sys.argv[4])[:1]
-    if len(row) == 1:
-        print(row[0].id)
+    row = s.query(State).filter(State.name == sys.argv[4]).first()
+    if row:
+        print(row.id)
     else:
         print("Not Found")
