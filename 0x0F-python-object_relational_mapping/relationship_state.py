@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Class definition of State class.
 (links to the MySQL table states)
