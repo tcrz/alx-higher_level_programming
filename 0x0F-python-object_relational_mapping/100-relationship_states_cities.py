@@ -29,4 +29,3 @@ if __name__ == '__main__':
                     state=State(name="California"))
     s.add(new_city)
     s.commit()
-
