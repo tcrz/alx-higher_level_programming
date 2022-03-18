@@ -7,12 +7,11 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    r2 = requests.get(
-        'https://api.github.com/repos/{}/{}/commits'
-        .format(sys.argv[1], sys.argv[2]))
-    data = r2.json()
-    if len(data) > 2:
-        for i in range(10):
-            raw_data = data[i]
-            print(raw_data.get('sha')+':',
-                  raw_data.get('commit').get('author').get('name'))
+    r = requests.get('https://api.github.com/repos/{}/{}/commits'
+                     .format(sys.argv[2], sys.argv[1]))
+    if r.status_code >= 400:
+        print('None')
+    else:
+        for com in r.json()[:10]:
+            print("{}: {}".format(com.get('sha'),
+                                  com.get('commit').get('author').get('name')))
