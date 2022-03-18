@@ -2,9 +2,6 @@
 """script that fetches 'https://alx-intranet.hbtn.io/status' """
 from urllib import request
 
-""" get status code """
-
-
 with request.urlopen('https://alx-intranet.hbtn.io/status') as resp:
     data = resp.read()
 
