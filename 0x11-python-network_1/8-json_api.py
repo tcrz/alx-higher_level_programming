@@ -15,11 +15,10 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    if sys.argv[1]:
-        value_dict = {'q': sys.argv[1][0]}
-    else:
-        value_dict = {'q': ""}
-    r = requests.post("http://0.0.0.0:5000/search_user", data=value_dict)
+    q = ""
+    if len(sys.argv) > 1:
+        q = sys.argv[1]
+    r = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
     try:
         data = r.json()
         if len(data) == 0:
