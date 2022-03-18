@@ -11,8 +11,7 @@ if __name__ == "__main__":
         'https://api.github.com/repos/{}/{}/commits?per_page=10'
         .format(sys.argv[2], sys.argv[1]))
     data = r2.json()
-    if len(data) > 2:
-        for i in range(len(data)):
-            raw_data = data[i]
-            print(raw_data.get('sha')+':',
-                  raw_data.get('commit').get('author').get('name'))
+    for i in range(len(data)):
+        raw_data = data[i]
+        print(raw_data.get('sha')+':',
+              raw_data.get('commit').get('author').get('name'))
