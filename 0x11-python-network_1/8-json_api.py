@@ -16,7 +16,7 @@ if __name__ == "__main__":
     import sys
 
     if sys.argv[1]:
-        value_dict = {'q': sys.argv[1]}
+        value_dict = {'q': sys.argv[1][0]}
     else:
         value_dict = {'q': ""}
     r = requests.post("http://0.0.0.0:5000/search_user", data=value_dict)
