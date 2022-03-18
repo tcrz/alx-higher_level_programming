@@ -14,5 +14,5 @@ if __name__ == "__main__":
     if len(data) > 2:
         for i in range(len(data)):
             raw_data = data[i]
-            print(raw_data.get('sha'),
+            print(raw_data.get('sha')+':',
                   raw_data.get('commit').get('author').get('name'))
