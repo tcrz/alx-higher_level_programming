@@ -21,4 +21,3 @@ class State(Base):
     name = Column(String(128), nullable=False)
     cities = relationship("City", cascade="all, delete-orphan",
                           backref="state")
-    # City.state = relationship("State", back_populates="cities")
