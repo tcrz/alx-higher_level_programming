@@ -8,10 +8,17 @@ You must use the module request
 */
 const request = require('request');
 
-request('https://swapi-api.hbtn.io/api/people/18', function (error, response, body) {
+request('https://swapi-api.hbtn.io/api/films/', function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    console.log(JSON.parse(body).films.length);
+    const chrList = JSON.parse(body).results[0].characters;
+    request(chrList[15], function (error, response, body) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(JSON.parse(body).films.length);
+      }
+    });
   }
 });
