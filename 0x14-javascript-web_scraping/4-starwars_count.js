@@ -13,14 +13,16 @@ request(argv[0], function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    const chrList = JSON.parse(body).results[0].characters;
-    const id = chrList.filter(n => n.includes('18'));
-    request(id[0], function (error, response, body) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log(JSON.parse(body).films.length);
+    const resultsList = JSON.parse(body).results;
+    const chrList = resultsList.map(n => n.characters);
+    let count = 0;
+    chrList.forEach(function (n) {
+      for (let i = 0; i < n.length; i++) {
+        if (n[i].includes('18')) {
+          count += 1;
+        }
       }
     });
+    console.log(count);
   }
 });
