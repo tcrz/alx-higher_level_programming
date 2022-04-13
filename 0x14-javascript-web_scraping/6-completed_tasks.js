@@ -13,17 +13,16 @@ request(argv[0], function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    let userIdList = [];
     const tasks = JSON.parse(body);
-    tasks.forEach(n => userIdList.push(n.userId));
-    userIdList = [...new Set(userIdList)];
     const cmpTasks = {};
-    userIdList.forEach(n => {
-      cmpTasks[n] = 0;
+    tasks.forEach(n => {
+      if (n.completed) {
+        cmpTasks[n.userId] = 0;
+      }
     });
-    userIdList.forEach(x => {
+    Object.keys(cmpTasks).forEach(x => {
       tasks.forEach(n => {
-        if (n.userId === x && n.completed) {
+        if (n.userId === parseInt(x) && n.completed) {
           cmpTasks[n.userId] += 1;
         }
       });
