@@ -14,7 +14,8 @@ request(argv[0], function (error, response, body) {
     console.log(error);
   } else {
     const chrList = JSON.parse(body).results[0].characters;
-    request(chrList[15], function (error, response, body) {
+    const id = chrList.filter(n => n.includes('18'));
+    request(id[0], function (error, response, body) {
       if (error) {
         console.log(error);
       } else {
