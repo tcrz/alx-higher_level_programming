@@ -7,8 +7,9 @@ Wedge Antilles is character ID 18 - your script must use this ID for filtering t
 You must use the module request
 */
 const request = require('request');
+const argv = process.argv.slice(2)
 
-request('https://swapi-api.hbtn.io/api/films/', function (error, response, body) {
+request(argv[0], function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
