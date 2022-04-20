@@ -5,7 +5,6 @@ $(document).ready(function () {
     const langCode = $('INPUT#language_code').val();
     $.get('https://fourtonfish.com/hellosalut/?lang=' + langCode, function (data) {
       $('DIV#hello').text(data.hello);
-      console.log(data.hello);
     });
   });
   $('INPUT#language_code').on('keypress', function (e) {
@@ -13,7 +12,6 @@ $(document).ready(function () {
     if (e.which === 13) {
       $.get('https://fourtonfish.com/hellosalut/?lang=' + langCode, function (data) {
         $('DIV#hello').text(data.hello);
-        console.log(data.hello);
       });
     }
   });
